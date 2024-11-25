@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Todo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Form Container -->
+      <div id="form-input">
+        <form action="">
+          <label for="username">Name</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="input-data"
+            required />
+          <label for="userage">Age</label>
+          <input
+            type="number"
+            name="userage"
+            id="userage"
+            class="input-data"
+            required />
+          <button class="submitbtn" id="submitbtn">Save</button>
+          <!-- <button class="deletebtn" id="deletebtn">Delete</button> -->
+        </form>
+      </div>
+      <!-- Task List -->
+      <div class="task-list">
+        <ul class="list-col"></ul>
+      </div>
+    </div>
+    <script src="./Todo.js"></script>
+  </body>
+</html>

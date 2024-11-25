@@ -5,6 +5,12 @@
 .list-col {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.editing-li {
+  border: 1px solid black;
 }
 
 .task-list {

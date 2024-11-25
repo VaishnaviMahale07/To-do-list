@@ -34,13 +34,18 @@ submitForm.addEventListener("submit", function (e) {
     //delete btn
     let deletebtn = document.createElement("button");
     deletebtn.textContent = "Delete";
+    // deletebtn.onclick = deleteFromList
     deletebtn.onclick = function () {
-      localStorage.removeItem("li");
+      let [name, age] = userData.split(", ");
+      let allUserData = JSON.parse(localStorage.getItem("userData")) || [];
+      allUserData = allUserData.filter((el) => el != userData);
+      localStorage.setItem("userData", JSON.stringify(allUserData));
       li.remove();
+      //   deleteItemFromLocalStorage("userData", userData);
     };
     li.appendChild(editbtn);
     li.appendChild(deletebtn);
-    document.querySelector(".task-list").appendChild(li);
+    document.querySelector(".list-col").appendChild(li);
   }
 
   addList(`${username} , ${userage}`);
@@ -61,8 +66,15 @@ submitForm.addEventListener("submit", function (e) {
   document.getElementById("userage").value = "";
 });
 
-//delete from locale storeage
 // deletebtn.addEventListener("click", (e) => {
 //   e.preventDefault();
 //   localStorage.removeItem("todo");
 // });
+
+/**
+ * 1. displayList -
+ * 2. addToList - a. localstorage add to userData b. displayList();
+    * 3. delete -
+    * 4. edit -  
+
+*/

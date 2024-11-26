@@ -41,7 +41,9 @@ function addListItem(e) {
     let name = document.getElementById("username").value;
     let age = document.getElementById("userage").value;
     const newData = currData.map((el) => {
-      if (el.id == editing) {
+      const timeStampID = new Date().getTime().toString();
+      if (el.id == editing || !el?.id) {
+        el.id = el?.id ? el.id : timeStampID
         el.name = name;
         el.age = age;
       }
